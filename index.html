@@ -34,10 +34,10 @@
 		}
 	</script>
 
-	<link rel="stylesheet" href="/assets/css/base.css">
-	<link rel="stylesheet" href="/assets/css/highlight.css">
-	<link rel="stylesheet" href="/assets/css/icons.css">
-	<link rel="shortcut icon" href="/assets/images/icon.svg" type="image/x-icon">
+	<link rel="stylesheet" href="assets/css/base.css">
+	<link rel="stylesheet" href="assets/css/highlight.css">
+	<link rel="stylesheet" href="assets/css/icons.css">
+	<link rel="shortcut icon" href="assets/images/icon.svg" type="image/x-icon">
 </head>
 <body>
 	<div class="container">
@@ -46,7 +46,7 @@
 				<nav class="navbar" itemscope itemtype="http://schema.org/SiteNavigationElement">
 					<div class="navbar-brand">
 						<a class="navbar-logo" href="javascript:;">
-							<img src="/assets/images/icon.svg" width="32" alt="Logo">
+							<img src="assets/images/icon.svg" width="32" alt="Logo">
 						</a>
 					</div>
 					<span class="navbar-burger">
@@ -61,9 +61,6 @@
 						<a itemprop="url" class="navbar-item go-element" href="#features">
 							<span itemprop="name">Features</span>
 						</a>
-						<a itemprop="url" class="navbar-item go-element" href="#documentation">
-							<span itemprop="name">Documentation</span>
-						</a>
 						<a itemprop="url" class="navbar-item go-element" href="#brief-tour" target="_blank">
 							<span itemprop="name">Brief tour</span>
 						</a>
@@ -72,13 +69,16 @@
 			</div>
 			<div class="hero-body">
 				<div class="content">
-					<img src="/assets/images/logo.svg" class="logo" alt="Logo">
+					<img src="assets/images/logo.svg" class="logo" alt="Logo">
 					<p class="subtitle">
 						The Berry Script Language.
 					</p>
 					<div class="buttons" itemscope itemtype="http://schema.org/SiteNavigationElement">
-						<a itemprop="url" href="/try-online/" target="_blank" class="be-btn outline">
+						<a itemprop="url" href="try-online/" target="_blank" class="be-btn outline">
 							<span itemprop="name">Try Online</span>
+						</a>
+						<a itemprop="url" href="https://berry.readthedocs.io/" target="_blank" class="be-btn">
+							<span itemprop="name">Documentation</span></i>
 						</a>
 						<a itemprop="url" href="https://github.com/berry-lang/berry" target="_blank" class="be-btn">
 							<span itemprop="name">GitHub</span> <i class="icon-github"></i>
@@ -154,26 +154,6 @@
 				</section>
 			</article>
 			<hr>
-			<article id="documentation">
-				<section>
-					<header>
-						<h1 class="be-header">Documentation</h1>
-					</header>
-					<p>
-						LaTeX documents repository: <a href="https://github.com/berry-lang/berry_doc">https://github.com/Skiars/berry_doc</a>
-					</p>
-					<p>
-						Short Manual: <a href="https://github.com/berry-lang/berry_doc/releases/download/latest/berry_short_manual.pdf">berry_short_manual.pdf</a>.
-					</p>
-					<p>
-						Reference Manual: <a href="https://github.com/berry-lang/berry_doc/releases/download/latest/berry_rm_en_us.pdf">berry_rm_en_us.pdf</a>, <a href="https://github.com/Skiars/berry_doc/releases/download/latest/berry_rm_zh_cn.pdf">berry_rm_zh_cn.pdf</a>.
-					</p>
-					<p>
-						Berry's EBNF grammar definition: <a href="https://github.com/berry-lang/berry/blob/master/tools/grammar/berry.ebnf">tools/grammar/berry.ebnf</a>
-					</p>
-				</section>
-			</article>
-			<hr>
 			<article id="features">
 				<section>
 					<header>
@@ -209,8 +189,9 @@
 									<li>Field operator: <mark>.</mark></li>
 									<li>Subscript operator: <mark>[]</mark></li>
 									<li>Connect string operator: <mark>+</mark></li>
-									<li>Conditional operator: <mark>? :</mark></li>
+									<li>Conditional operator: condition <mark>?</mark> val_true <mark>:</mark> val_false</li>
 									<li>Brackets: <mark>()</mark></li>
+									<li>Bytes buffer support</li>
 								</ul>
 							</li>
 						</ul>
@@ -218,9 +199,9 @@
 							<li>
 								<b>Control Structure</b>
 								<ul>
-									<li>Conditional statement: <mark>if-else</mark></li>
-									<li>Iteration statement: <mark>while</mark> and <mark>for</mark></li>
-									<li>Jump statement: <mark>break</mark> and <mark>continue</mark></li>
+									<li>Conditional statement: <mark>if</mark> <mark>elif</mark> <mark>else</mark> <mark>end</mark></li>
+									<li>Iteration statement: <mark>while</mark>, <mark>for</mark></li>
+									<li>Jump statement: <mark>break</mark>, <mark>continue</mark></li>
 								</ul>
 							</li>
 						</ul>
@@ -254,6 +235,9 @@
 								<ul>
 									<li>Built-in module that takes almost no RAM</li>
 									<li>Extension module support: script module, bytecode file module and shared library (like *.so, *.dll) module</li>
+									<li>Ability to solidify code, classes and modules in flash to reduce RAM usage</li>
+									<li>Optional Regex support</li>
+									<li>Optional <a href="https://github.com/lvgl/lv_binding_berry" target="_blank">LVGL mapping</a></li>
 								</ul>
 							</li>
 						</ul>
@@ -278,7 +262,17 @@
 							<li>
 								<b>Bytecode file support</b>
 								<ul>
+									<li>Export function to bytecode file</li>
 									<li>Load the bytecode file and execute</li>
+								</ul>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<b>Native C interface</b>
+								<ul>
+									<li>Can be easily embedded as a library in existing code like <a href="https://tasmota.github.io/docs/" target="_blank">Tasmota</a></li>
+									<li>Optional <a href="https://github.com/lvgl/lv_binding_berry" target="_blank">easy mapping</a> to call C code from Berry</li>
 								</ul>
 							</li>
 						</ul>
@@ -410,6 +404,6 @@ child <span class="hl opt">=</span> <span class="hl kwd">Child</span><span class
 			</p>
 		</footer>
 	</div>
-	<script type="text/javascript" src="/assets/js/main.js"></script>
+	<script type="text/javascript" src="assets/js/main.js"></script>
 </body>
 </html>

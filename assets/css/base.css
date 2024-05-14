@@ -46,7 +46,7 @@ ul li {
   margin-left: 35px;
 }
 mark {
-  color: #727779;
+  color: #d73a49;
   background: none;
   font-weight: 600;
 }
@@ -177,7 +177,7 @@ h2 .be-header {
 .container > .hero .hero-body > .content .buttons {
   display: grid;
   grid-gap: 10px;
-  grid-template-columns: repeat(2, auto);
+  grid-template-columns: repeat(3, auto);
   justify-content: center;
 }
 .container > .content {
